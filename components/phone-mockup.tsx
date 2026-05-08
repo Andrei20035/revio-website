@@ -46,11 +46,8 @@ export function PhoneMockup({ children, className = "", delay = 0 }: PhoneMockup
 export function AppScreen() {
     return (
         <div className="relative h-full w-full overflow-hidden bg-black">
-
-            {/* top fade */}
             <div className="pointer-events-none absolute top-0 left-0 right-0 z-20 h-24 bg-gradient-to-b from-black/70 to-transparent" />
 
-            {/* scrolling feed */}
             <motion.img
                 src="/feed-preview.png"
                 alt="Revio feed preview"
@@ -64,12 +61,7 @@ export function AppScreen() {
                 }}
             />
 
-            {/* fixed bottom navbar */}
-            <img
-                src="/navbar.png"
-                alt="Revio navigation"
-                className="absolute bottom-0 left-[-12px] z-30 w-[calc(100%+24px)] max-w-none"
-            />
+            <MockBottomNav />
         </div>
     )
 }
@@ -83,31 +75,56 @@ function HeartIcon({ className }: { className?: string }) {
 }
 
 function MockBottomNav() {
-  return (
-      <div className="absolute bottom-7 left-4 right-4 z-30">
-        {/* fade behind navbar */}
-        <div className="pointer-events-none absolute -bottom-8 left-[-16px] right-[-16px] h-32 bg-gradient-to-t from-black/80 to-transparent" />
+    return (
+        <div className="absolute bottom-0 left-0 right-0 z-30 h-[130px]">
+            {/* fade background */}
+            <div
+                className="absolute inset-0"
+                style={{
+                    background:
+                        "linear-gradient(180deg, rgba(5,7,27,0) 0%, #000000 86%)",
+                }}
+            />
+            {/* navbar */}
+            <div className="absolute bottom-5 left-1/2 flex h-[52px] w-[88%] -translate-x-1/2 items-center justify-between rounded-full border border-white/10 bg-[#161827]/40 px-5 shadow-[0_-8px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl">
 
-        {/* navbar glass */}
-        <div className="relative flex h-16 items-center justify-between rounded-full border border-white/10 bg-[#11121c]/80 px-6 shadow-[0_-8px_30px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
-          <NavIcon label="home" />
-          <NavIcon label="trophy" />
+                {/* home */}
+                <img
+                    src="/home-button.png"
+                    alt="Home"
+                    className="h-6 w-6 object-contain"
+                />
 
-          {/* center plus */}
-          <button className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] shadow-lg">
-            <span className="text-4xl font-light leading-none text-white">+</span>
-          </button>
+                {/* leaderboard */}
+                <img
+                    src="/leaderboard.png"
+                    alt="Leaderboard"
+                    className="h-6 w-6 object-contain"
+                />
 
-          <NavIcon label="flame" />
+                {/* center plus */}
+                <img
+                    src="/plus-button.png"
+                    alt="Post"
+                    className="h-[35px] w-[35px] object-contain"
+                />
 
-          <img
-              src="/profile-picture.png"
-              alt="Profile"
-              className="h-9 w-9 rounded-full object-cover"
-          />
+                {/* activity */}
+                <img
+                    src="/activity-button.png"
+                    alt="Activity"
+                    className="h-6 w-6 object-contain"
+                />
+
+                {/* profile */}
+                <img
+                    src="/profile-picture.png"
+                    alt="Profile"
+                    className="h-6 w-6 rounded-full object-cover"
+                />
+            </div>
         </div>
-      </div>
-  )
+    )
 }
 
 function NavIcon({ label }: { label: "home" | "trophy" | "flame" }) {
