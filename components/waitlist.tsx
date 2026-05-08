@@ -28,14 +28,18 @@ export function Waitlist() {
   }
 
   return (
-    <section id="waitlist" className="py-24 px-4 relative overflow-hidden">
+    <section id="waitlist" className="min-h-screen py-32 px-4 relative overflow-hidden flex items-center">
+      {/* Top fade overlay for smooth transition */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+      {/* Bottom fade overlay for smooth transition to footer */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080C30] to-transparent z-10 pointer-events-none" />
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#080C30] to-black" />
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#4A90E2]/20 via-[#9B59B6]/20 to-[#FF5F6D]/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto">
+      <div className="relative z-10 max-w-3xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

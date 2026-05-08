@@ -50,10 +50,14 @@ const previewPosts = [
 
 export function SocialInteractions() {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="min-h-screen py-32 px-4 relative overflow-hidden flex items-center">
+      {/* Top fade overlay for smooth transition from hero */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+      {/* Bottom fade overlay for smooth transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080C30] to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-black via-[#080C30] to-black" />
       
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
