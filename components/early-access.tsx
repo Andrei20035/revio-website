@@ -10,7 +10,7 @@ const perks = [
       </svg>
     ),
     title: "Reserved Username",
-    description: "Lock in your perfect handle before anyone else. First come, first served."
+    description: "Lock in your perfect handle before public launch"
   },
   {
     icon: (
@@ -19,7 +19,7 @@ const perks = [
       </svg>
     ),
     title: "Founding Member Badge",
-    description: "A permanent profile badge showing you were here from day one"
+    description: "Permanent profile badge marking day-one status"
   },
   {
     icon: (
@@ -27,35 +27,35 @@ const perks = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
       </svg>
     ),
-    title: "Exclusive Profile Flair",
-    description: "Custom colors and effects for your profile that regular users can&apos;t get"
+    title: "Custom Profile Accent",
+    description: "Exclusive color options for your profile"
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
       </svg>
     ),
-    title: "Early Leaderboard Boost",
-    description: "Start with bonus points to give you a head start when the app launches"
+    title: "Founding Member Frame",
+    description: "Distinctive frame for your profile photos"
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
       </svg>
     ),
-    title: "Verified Spotter Status",
-    description: "Skip the verification queue and get your blue checkmark instantly"
+    title: "Early Community Access",
+    description: "Join the community before general availability"
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
       </svg>
     ),
-    title: "Priority Feature Access",
-    description: "Be first to test new features before they roll out to everyone"
+    title: "Season Zero Cosmetic",
+    description: "Limited edition cosmetic from our launch season"
   },
 ]
 
@@ -81,13 +81,13 @@ export function EarlyAccess() {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-white/80 mb-4">
-            FOUNDING MEMBER PERKS
+            FOUNDING MEMBERS
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 text-balance">
             Early Access <span className="gradient-text">Rewards</span>
           </h2>
           <p className="text-white/60 max-w-xl mx-auto text-pretty">
-            The first 1,000 members unlock exclusive perks that will never be available again.
+            The first 1,000 members unlock exclusive cosmetics and founding perks.
           </p>
         </motion.div>
 
@@ -118,22 +118,22 @@ export function EarlyAccess() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-16 glass rounded-2xl p-6"
+          className="mt-16 glass rounded-2xl p-8"
         >
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-white font-medium">Founding member spots remaining</span>
-            <span className="text-sm text-white/60">347 / 1,000</span>
+          <div className="flex items-center justify-between mb-6">
+            <span className="text-white/70 text-sm font-medium tracking-wide uppercase">Founding member spots</span>
+            <span className="text-white font-semibold">653 / 1,000</span>
           </div>
-          <div className="h-3 bg-white/10 rounded-full overflow-hidden">
+          <div className="h-2 bg-white/5 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: "65.3%" }}
               viewport={{ once: true }}
-              transition={{ delay: 0.7, duration: 1, ease: "easeOut" }}
-              className="h-full bg-gradient-to-r from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] rounded-full"
+              transition={{ delay: 0.7, duration: 1.2, ease: "easeOut" }}
+              className="h-full bg-gradient-to-r from-[#4A90E2]/80 via-[#9B59B6]/80 to-[#FF5F6D]/80 rounded-full"
             />
           </div>
-          <p className="text-center mt-4 text-sm text-white/40">653 spots claimed so far</p>
+          <p className="text-center mt-5 text-sm text-white/40">653 / 1,000 spots claimed</p>
         </motion.div>
       </div>
     </section>

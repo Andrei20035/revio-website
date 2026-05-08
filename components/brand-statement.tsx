@@ -67,7 +67,7 @@ export function BrandStatement() {
               transition={{ delay: 0.5 }}
               className="text-white/80 font-medium text-pretty"
             >
-              CarSpotter is built by enthusiasts, for enthusiasts. We&apos;re creating a space where every spot counts, every spotter matters, and the passion that drives us all finally has a home.
+              Revio is built by enthusiasts, for enthusiasts. We&apos;re creating a space where every spot counts, every spotter matters, and the passion that drives us all finally has a home.
             </motion.p>
           </div>
 

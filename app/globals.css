@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* CarSpotter Dark Luxury Theme */
+  /* Revio Dark Luxury Theme */
   --background: #000000;
   --background-secondary: #080C30;
   --foreground: #ffffff;
