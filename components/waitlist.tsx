@@ -51,7 +51,7 @@ export function Waitlist() {
             EARLY ACCESS
           </span>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 text-balance">
-            Be First to <span className="gradient-text glow-text">Experience</span> CarSpotter
+            Be First to <span className="gradient-text glow-text">Experience</span> Revio
           </h2>
           <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto text-pretty">
             Join the waitlist for exclusive early access. We&apos;ll notify you when your spot opens up.
@@ -190,13 +190,13 @@ export function Waitlist() {
             className="flex items-center justify-center gap-8 mt-12"
           >
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold gradient-text">2.8K</p>
-              <p className="text-sm text-white/40">On Waitlist</p>
+              <p className="text-2xl md:text-3xl font-bold gradient-text">653</p>
+              <p className="text-sm text-white/40">Spots Claimed</p>
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold gradient-text">47</p>
-              <p className="text-sm text-white/40">Countries</p>
+              <p className="text-2xl md:text-3xl font-bold gradient-text">347</p>
+              <p className="text-sm text-white/40">Remaining</p>
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="text-center">
