@@ -17,8 +17,8 @@ export function PhoneMockup({ children, className = "", delay = 0 }: PhoneMockup
       className={`relative ${className}`}
     >
       {/* Phone frame */}
-      <div className="relative mx-auto w-[280px] md:w-[340px] h-[620px] md:h-[720px] rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 p-[6px] shadow-2xl">
-        {/* Inner bezel */}
+        <div className="relative mx-auto w-[340px] h-[720px] origin-center scale-[0.82] sm:scale-[0.9] md:scale-100 rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 p-[6px] shadow-2xl">
+            {/* Inner bezel */}
         <div className="absolute inset-[6px] rounded-[2.5rem] bg-gradient-to-b from-zinc-700 to-zinc-800 p-1">
           {/* Screen */}
           <div className="relative h-full w-full overflow-hidden rounded-[2.25rem] bg-[#080C30]">
@@ -64,14 +64,6 @@ export function AppScreen() {
             <MockBottomNav />
         </div>
     )
-}
-
-function HeartIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-    </svg>
-  )
 }
 
 function MockBottomNav() {
