@@ -61,8 +61,10 @@ function SocialIcon({ type }: { type: string }) {
 
 export function Footer() {
   return (
-    <footer className="relative py-16 px-4 overflow-hidden">
+    <footer className="relative py-20 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-[#080C30]" />
+      {/* Top fade overlay for smooth transition from waitlist */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="relative z-10 max-w-6xl mx-auto">

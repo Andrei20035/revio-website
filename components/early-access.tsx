@@ -61,14 +61,18 @@ const perks = [
 
 export function EarlyAccess() {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="min-h-screen py-32 px-4 relative overflow-hidden flex items-center">
+      {/* Top fade overlay for smooth transition */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+      {/* Bottom fade overlay for smooth transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080C30] to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-0 bg-black" />
       
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#4A90E2]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#FF5F6D]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

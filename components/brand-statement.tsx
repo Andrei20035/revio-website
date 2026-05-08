@@ -4,13 +4,17 @@ import { motion } from "framer-motion"
 
 export function BrandStatement() {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="min-h-screen py-32 px-4 relative overflow-hidden flex items-center">
+      {/* Top fade overlay for smooth transition */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+      {/* Bottom fade overlay for smooth transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-0 bg-black" />
       
       {/* Subtle gradient accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-[#4A90E2]/5 via-[#9B59B6]/5 to-[#FF5F6D]/5 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-4xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
