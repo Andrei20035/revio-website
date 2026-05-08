@@ -76,14 +76,8 @@ export function Footer() {
             viewport={{ once: true }}
             className="col-span-2 md:col-span-1"
           >
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-              </div>
-              <span className="text-xl font-bold text-white">CarSpotter</span>
+            <a href="#" className="flex items-center mb-4">
+              <span className="text-xl font-bold text-white">Revio</span>
             </a>
             <p className="text-sm text-white/50 mb-4">
               The social platform for automotive enthusiasts.
@@ -185,7 +179,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/40">
-            © 2026 CarSpotter. All rights reserved.
+            © 2026 Revio. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs text-white/40 hover:text-white transition-colors">

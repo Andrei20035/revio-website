@@ -124,8 +124,8 @@ export function Hero() {
                 ))}
               </div>
               <div>
-                <p className="text-white font-semibold">2,800+</p>
-                <p className="text-sm text-white/40">enthusiasts on the waitlist</p>
+                <p className="text-white font-semibold">Founding access for the first 1,000 spotters</p>
+                <p className="text-sm text-white/40">Founding members joining now</p>
               </div>
             </motion.div>
           </motion.div>
