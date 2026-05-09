@@ -7,7 +7,7 @@ const leaderboardData = [
   { rank: 1, name: "Alex Chen", username: "@supercaralex", spots: 312, points: "24.8k", avatar: "AC" },
   { rank: 2, name: "Sofia Martinez", username: "@sofia_spots", spots: 287, points: "22.1k", avatar: "SM" },
   { rank: 3, name: "Marcus Williams", username: "@exoticlens", spots: 256, points: "19.6k", avatar: "MW" },
-  { rank: 4, name: "Emma Thompson", username: "@carspotter_em", spots: 198, points: "15.3k", avatar: "ET" },
+  { rank: 4, name: "Emma Thompson", username: "@emma_t", spots: 198, points: "15.3k", avatar: "ET" },
   { rank: 5, name: "James Park", username: "@jpark_motors", spots: 175, points: "13.5k", avatar: "JP" },
 ]
 

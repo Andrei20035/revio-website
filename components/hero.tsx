@@ -5,7 +5,7 @@ import { PhoneMockup, AppScreen } from "./phone-mockup"
 
 export function Hero() {
   return (
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 px-4">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-20">
           {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#080C30] via-black to-[#080C30]" />
       
@@ -46,23 +46,25 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left lg:pl-16"
+            className="text-center lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6"
+              className="inline-flex max-w-full items-center gap-2 px-4 py-2 rounded-full glass mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-[#4A90E2] animate-pulse" />
-              <span className="text-sm text-white/80">Now accepting early access signups</span>
+                <span className="text-sm text-white/80 whitespace-normal sm:whitespace-nowrap">
+                  Now accepting early access signups
+                </span>
             </motion.div>
 
             <motion.h1
@@ -109,8 +111,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex items-center gap-6 mt-10 justify-center lg:justify-start"
-            >
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-10 justify-center lg:justify-start text-center sm:text-left"            >
               <div className="flex -space-x-3">
                 {[...Array(4)].map((_, i) => (
                   <div
@@ -125,7 +126,7 @@ export function Hero() {
               </div>
               <div>
                 <p className="text-white font-semibold">Founding access for the first 1,000 spotters</p>
-                <p className="text-sm text-white/40">Founding members joining now</p>
+                <p className="text-sm text-white/50">Reserve your founder badge before launch.</p>
               </div>
             </motion.div>
           </motion.div>
