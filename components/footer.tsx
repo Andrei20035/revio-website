@@ -47,7 +47,7 @@ export function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-[1.4fr_0.8fr_0.8fr_1.4fr] gap-8 md:gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-[1fr_auto_auto] gap-8 md:gap-24 mb-12">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -112,30 +112,7 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="col-span-2 md:col-span-1"
-          >
-            <h4 className="text-sm font-semibold text-white mb-4">Stay Updated</h4>
-            <p className="text-sm text-white/50 mb-4">Get the latest news and updates.</p>
-            <form className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Email"
-                className="flex-1 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white text-sm placeholder:text-white/40 focus:outline-none focus:border-[#4A90E2]"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-full bg-gradient-to-r from-[#4A90E2] to-[#9B59B6] text-white text-sm font-medium hover:opacity-90 transition-opacity"
-              >
-                Join
-              </button>
-            </form>
-          </motion.div>
+
         </div>
 
         {/* Bottom bar */}
@@ -143,17 +120,6 @@ export function Footer() {
           <p className="text-sm text-white/40">
             © 2026 Revio. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="/privacy" className="text-xs text-white/40 hover:text-white transition-colors">
-              Privacy
-            </a>
-            <a href="/terms" className="text-xs text-white/40 hover:text-white transition-colors">
-              Terms
-            </a>
-            <a href="/cookies" className="text-xs text-white/40 hover:text-white transition-colors">
-              Cookies
-            </a>
-          </div>
         </div>
       </div>
     </footer>

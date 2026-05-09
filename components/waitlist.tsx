@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import type { FormEvent } from "react"
 import { motion } from "framer-motion"
 
 const countries = [
@@ -15,6 +16,9 @@ const countries = [
   "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Vietnam", "Other"
 ]
 
+const usernameRegex = /^[a-z0-9_]{3,20}$/
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export function Waitlist() {
   const [email, setEmail] = useState("")
   const [username, setUsername] = useState("")
@@ -22,18 +26,49 @@ export function Waitlist() {
   const [country, setCountry] = useState("")
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
+  const [position, setPosition] = useState<number | null>(null)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const isEmailValid = emailRegex.test(email.trim())
+  const isUsernameValid = usernameRegex.test(username.trim())
+  const isFormValid = isEmailValid && isUsernameValid && Boolean(platform) && Boolean(country)
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/
 
-    if (!email || !usernameRegex.test(username) || !platform || !country) return
+    if (!isFormValid) return
     
     setLoading(true)
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    setSubmitted(true)
-    setLoading(false)
+    setErrorMessage("")
+
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          username,
+          platform,
+          country,
+        }),
+      })
+
+      const data = await response.json().catch(() => null) as { success?: boolean; position?: number | null; error?: string } | null
+
+      if (!response.ok) {
+        setErrorMessage(data?.error ?? "Something went wrong. Please try again.")
+        return
+      }
+
+      setPosition(typeof data?.position === "number" ? data.position : null)
+      setSubmitted(true)
+    } catch {
+      setErrorMessage("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -84,7 +119,10 @@ export function Waitlist() {
                   type="email"
                   id="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                    setErrorMessage("")
+                  }}
                   placeholder="you@example.com"
                   required
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-[#4A90E2] focus:ring-1 focus:ring-[#4A90E2] transition-all"
@@ -100,16 +138,16 @@ export function Waitlist() {
                     type="text"
                     id="username"
                     value={username}
-                    onChange={(e) => setUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ""))}
+                    onChange={(e) => {
+                      setUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ""))
+                      setErrorMessage("")
+                    }}
                     placeholder="yourusername"
                     minLength={3}
                     maxLength={20}
                     required
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-[#4A90E2] focus:ring-1 focus:ring-[#4A90E2] transition-all"
                 />
-                <p className="mt-2 text-xs text-white/40">
-                  3–20 characters. Letters, numbers, and underscores only.
-                </p>
               </div>
 
               {/* Platform */}
@@ -120,7 +158,10 @@ export function Waitlist() {
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     type="button"
-                    onClick={() => setPlatform("ios")}
+                    onClick={() => {
+                      setPlatform("ios")
+                      setErrorMessage("")
+                    }}
                     className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl border transition-all ${
                       platform === "ios"
                         ? "bg-white/10 border-[#4A90E2] text-white"
@@ -134,7 +175,10 @@ export function Waitlist() {
                   </button>
                   <button
                     type="button"
-                    onClick={() => setPlatform("android")}
+                    onClick={() => {
+                      setPlatform("android")
+                      setErrorMessage("")
+                    }}
                     className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl border transition-all ${
                       platform === "android"
                         ? "bg-white/10 border-[#4A90E2] text-white"
@@ -157,7 +201,10 @@ export function Waitlist() {
                 <select
                   id="country"
                   value={country}
-                  onChange={(e) => setCountry(e.target.value)}
+                  onChange={(e) => {
+                    setCountry(e.target.value)
+                    setErrorMessage("")
+                  }}
                   required
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#4A90E2] focus:ring-1 focus:ring-[#4A90E2] transition-all appearance-none cursor-pointer"
                   style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: 'right 0.75rem center', backgroundRepeat: 'no-repeat', backgroundSize: '1.5em 1.5em' }}
@@ -171,7 +218,7 @@ export function Waitlist() {
 
               <button
                 type="submit"
-                disabled={loading || !email || !/^[a-zA-Z0-9_]{3,20}$/.test(username) || !platform || !country}
+                disabled={loading || !isFormValid}
                 className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
@@ -186,6 +233,12 @@ export function Waitlist() {
                   "Join the Waitlist"
                 )}
               </button>
+
+              {errorMessage && (
+                <p className="rounded-xl border border-[#FF5F6D]/30 bg-[#FF5F6D]/10 px-4 py-3 text-sm text-white/80" role="alert">
+                  {errorMessage}
+                </p>
+              )}
 
               <p className="text-xs text-white/40 text-center">
                 No spam, ever. We&apos;ll only email you about your early access.
@@ -205,8 +258,12 @@ export function Waitlist() {
               <h3 className="text-xl font-semibold text-white mb-2">You&apos;re on the list!</h3>
               <p className="text-white/60 mb-4">We&apos;ll email you when your early access spot opens up.</p>
               <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                <p className="text-sm text-white/50 mb-1">Your position</p>
-                <p className="text-2xl font-bold gradient-text">#654</p>
+                <p className="text-sm text-white/50 mb-1">
+                  {position ? "Your position" : "Reserved username"}
+                </p>
+                <p className="text-2xl font-bold gradient-text">
+                  {position ? `#${position}` : `@${username}`}
+                </p>
               </div>
             </motion.div>
           )}
