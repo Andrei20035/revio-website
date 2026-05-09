@@ -47,13 +47,13 @@ export function Hero() {
       />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-w-0">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left min-w-0"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              className="text-[clamp(3rem,14vw,4.5rem)] md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight break-words"
             >
               Spot. Share.{" "}
               <span className="gradient-text glow-text">Compete.</span>
@@ -90,17 +90,17 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full"
             >
               <a
                 href="#waitlist"
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] text-white font-semibold hover:opacity-90 transition-all hover:scale-105 glow text-center"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] text-white font-semibold hover:opacity-90 transition-all hover:scale-105 glow text-center"
               >
                 Join the Waitlist
               </a>
               <a
                 href="#features"
-                className="px-8 py-4 rounded-full glass text-white font-semibold hover:bg-white/10 transition-all text-center"
+                className="w-full sm:w-auto px-8 py-4 rounded-full glass text-white font-semibold hover:bg-white/10 transition-all text-center"
               >
                 See How It Works
               </a>
@@ -111,7 +111,8 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-10 justify-center lg:justify-start text-center sm:text-left"            >
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-10 justify-center lg:justify-start text-center sm:text-left w-full min-w-0"
+            >
               <div className="flex -space-x-3">
                 {[...Array(4)].map((_, i) => (
                   <div
@@ -124,8 +125,10 @@ export function Hero() {
                   </div>
                 ))}
               </div>
-              <div>
-                <p className="text-white font-semibold">Founding access for the first 1,000 spotters</p>
+              <div className="min-w-0 max-w-full">
+                  <p className="text-white font-semibold text-balance">
+                      Founding access for the first 1,000 spotters
+                  </p>
                 <p className="text-sm text-white/50">Reserve your founder badge before launch.</p>
               </div>
             </motion.div>
@@ -135,7 +138,7 @@ export function Hero() {
             <div className="relative flex justify-center lg:justify-end lg:translate-y-6">
                 <PhoneMockup
                     delay={0.4}
-                    className="lg:-translate-x-8 xl:-translate-x-8 2xl:-translate-x-8 lg:scale-90 xl:scale-[0.92]"
+                    className="lg:translate-x-24 xl:translate-x-36 2xl:translate-x-36 lg:scale-90 xl:scale-[0.92]"
                 >
                     <AppScreen />
                 </PhoneMockup>

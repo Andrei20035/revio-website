@@ -9,38 +9,63 @@ interface PhoneMockupProps {
 }
 
 export function PhoneMockup({ children, className = "", delay = 0 }: PhoneMockupProps) {
-  return (
-    <motion.div
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay, ease: "easeOut" }}
-      className={`relative ${className}`}
-    >
-      {/* Phone frame */}
-        <div className="relative mx-auto w-[340px] h-[720px] origin-center scale-[0.78] sm:scale-[0.85] md:scale-[0.92] lg:scale-[0.88] xl:scale-[0.92] rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 p-[6px] shadow-2xl">
-            {/* Inner bezel */}
-        <div className="absolute inset-[6px] rounded-[2.5rem] bg-gradient-to-b from-zinc-700 to-zinc-800 p-1">
-          {/* Screen */}
-          <div className="relative h-full w-full overflow-hidden rounded-[2.25rem] bg-[#080C30]">
-            {/* Notch */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10" />
-            {/* Screen content */}
-            <div className="h-full w-full overflow-hidden">
-              {children}
+    return (
+        <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay, ease: "easeOut" }}
+            className={`
+        relative mx-auto
+        w-[265px] h-[562px]
+        sm:w-[289px] sm:h-[612px]
+        md:w-[313px] md:h-[662px]
+        lg:w-[299px] lg:h-[634px]
+        xl:w-[313px] xl:h-[662px]
+        ${className}
+      `}
+        >
+            {/* Phone frame */}
+            <div
+                className="
+          absolute left-1/2 top-1/2
+          w-[340px] h-[720px]
+          -translate-x-1/2 -translate-y-1/2
+          origin-center
+          scale-[0.78]
+          sm:scale-[0.85]
+          md:scale-[0.92]
+          lg:scale-[0.88]
+          xl:scale-[0.92]
+          rounded-[3rem]
+          bg-gradient-to-b from-zinc-800 to-zinc-900
+          p-[6px]
+          shadow-2xl
+        "
+            >
+                {/* Inner bezel */}
+                <div className="absolute inset-[6px] rounded-[2.5rem] bg-gradient-to-b from-zinc-700 to-zinc-800 p-1">
+                    {/* Screen */}
+                    <div className="relative h-full w-full overflow-hidden rounded-[2.25rem] bg-[#080C30]">
+                        {/* Notch */}
+                        <div className="absolute top-0 left-1/2 z-10 h-7 w-32 -translate-x-1/2 rounded-b-2xl bg-black" />
+
+                        {/* Screen content */}
+                        <div className="h-full w-full overflow-hidden">
+                            {children}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Side buttons */}
+                <div className="absolute right-[-3px] top-28 h-12 w-1 rounded-r-sm bg-zinc-700" />
+                <div className="absolute left-[-3px] top-24 h-8 w-1 rounded-l-sm bg-zinc-700" />
+                <div className="absolute left-[-3px] top-36 h-16 w-1 rounded-l-sm bg-zinc-700" />
             </div>
-          </div>
-        </div>
-        {/* Side buttons */}
-        <div className="absolute right-[-3px] top-28 w-1 h-12 bg-zinc-700 rounded-r-sm" />
-        <div className="absolute left-[-3px] top-24 w-1 h-8 bg-zinc-700 rounded-l-sm" />
-        <div className="absolute left-[-3px] top-36 w-1 h-16 bg-zinc-700 rounded-l-sm" />
-      </div>
-      {/* Glow effect */}
-      <div className="absolute inset-0 -z-10 blur-3xl opacity-40">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] rounded-full" />
-      </div>
-    </motion.div>
-  )
+
+            {/* Glow effect */}
+            <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] opacity-40 blur-3xl" />
+        </motion.div>
+    )
 }
 
 export function AppScreen() {
