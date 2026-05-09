@@ -86,36 +86,30 @@ export function Navbar() {
       </motion.nav>
 
       {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-20 z-40 px-4 md:hidden"
-          >
-            <div className="glass rounded-2xl p-6 space-y-4">
+      {mobileMenuOpen && (
+          <div className="fixed inset-x-0 top-20 z-40 px-4 md:hidden">
+            <div className="glass backdrop-blur-[20px] backdrop-saturate-150 rounded-2xl p-6 space-y-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-white/70 hover:text-white transition-colors py-2"
-                >
-                  {link.name}
-                </a>
+                  <a
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block text-white/70 hover:text-white transition-colors py-2"
+                  >
+                    {link.name}
+                  </a>
               ))}
+
               <a
-                href="#waitlist"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-center px-6 py-3 rounded-full bg-gradient-to-r from-[#4A90E2] to-[#9B59B6] text-white font-medium"
+                  href="#waitlist"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-center px-6 py-3 rounded-full bg-gradient-to-r from-[#4A90E2] to-[#9B59B6] text-white font-medium"
               >
                 Get Early Access
               </a>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+      )}
     </>
   )
 }
