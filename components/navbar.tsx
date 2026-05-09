@@ -33,7 +33,7 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className={`flex items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${
-            scrolled ? "glass" : ""
+            scrolled ? "glass backdrop-blur-[20px] backdrop-saturate-150" : ""
           }`}>
             {/* Logo */}
             <a href="#" className="flex items-center gap-2">
