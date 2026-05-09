@@ -118,3 +118,27 @@ function MockBottomNav() {
         </div>
     )
 }
+
+function NavIcon({ label }: { label: "home" | "trophy" | "flame" }) {
+  if (label === "home") {
+    return (
+        <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10.5Z" />
+        </svg>
+    )
+  }
+
+  if (label === "trophy") {
+    return (
+        <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4ZM5 5H3v2a3 3 0 0 0 3 3M19 5h2v2a3 3 0 0 1-3 3" />
+        </svg>
+    )
+  }
+
+  return (
+      <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.5 14.5c0 3 2.5 5 5.5 5 3.5 0 6-2.5 6-6 0-2.5-1.5-4.5-3.5-6 .2 2.2-.8 3.4-2.1 4.2.2-3.2-1.7-5.8-4.4-7.2.3 3.5-2 5.2-3.4 7.1-.7.9-1.1 1.8-1.1 2.9Z" />
+      </svg>
+  )
+}
