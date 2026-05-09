@@ -20,7 +20,7 @@ export function BrandStatement() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center space-y-8"
+          className="text-center space-y-7"
         >
           {/* Headline */}
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
@@ -28,16 +28,17 @@ export function BrandStatement() {
             <span className="gradient-text">when shared.</span>
           </h2>
 
-          {/* Supporting text */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-lg md:text-xl text-white/50 font-light max-w-md mx-auto"
-          >
-            Built for people who slow down traffic just to look at a car.
-          </motion.p>
+            {/* Supporting text */}
+
+            <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-lg md:text-2xl text-zinc-300 font-normal leading-relaxed max-w-lg mx-auto"
+            >
+                Built for people who slow down traffic just to look at a car.
+            </motion.p>
 
           {/* Signature footer */}
           <motion.div
@@ -47,7 +48,7 @@ export function BrandStatement() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="pt-8"
           >
-            <span className="text-sm text-white/30 tracking-widest uppercase">
+            <span className="text-sm md:text-base text-zinc-400 tracking-[0.28em] uppercase">
               Revio — built by enthusiasts
             </span>
           </motion.div>

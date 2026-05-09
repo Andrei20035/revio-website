@@ -4,13 +4,20 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 
 const countries = [
-  "United States", "United Kingdom", "Germany", "France", "Canada", "Australia",
-  "Japan", "United Arab Emirates", "Switzerland", "Italy", "Spain", "Netherlands",
-  "Monaco", "Singapore", "Hong Kong", "Brazil", "Mexico", "South Korea", "Other"
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia", "Austria",
+  "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Belgium", "Bolivia", "Bosnia and Herzegovina",
+  "Brazil", "Bulgaria", "Canada", "Chile", "China", "Colombia", "Croatia", "Cyprus", "Czech Republic",
+  "Denmark", "Egypt", "Estonia", "Finland", "France", "Georgia", "Germany", "Greece", "Hong Kong",
+  "Hungary", "Iceland", "India", "Indonesia", "Ireland", "Israel", "Italy", "Japan", "Latvia", "Lithuania",
+  "Luxembourg", "Malaysia", "Malta", "Mexico", "Moldova", "Monaco", "Montenegro", "Morocco", "Netherlands",
+  "New Zealand", "Norway", "Poland", "Portugal", "Qatar", "Romania", "Saudi Arabia", "Serbia", "Singapore",
+  "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sweden", "Switzerland", "Thailand",
+  "Turkey", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Vietnam", "Other"
 ]
 
 export function Waitlist() {
   const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
   const [platform, setPlatform] = useState<"ios" | "android" | "">("")
   const [country, setCountry] = useState("")
   const [submitted, setSubmitted] = useState(false)
@@ -18,7 +25,9 @@ export function Waitlist() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email || !platform || !country) return
+    const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/
+
+    if (!email || !usernameRegex.test(username) || !platform || !country) return
     
     setLoading(true)
     // Simulate API call
@@ -82,6 +91,27 @@ export function Waitlist() {
                 />
               </div>
 
+              {/* Username */}
+              <div className="text-left">
+                <label htmlFor="username" className="block text-sm font-medium text-white/70 mb-2">
+                  Preferred Username
+                </label>
+                <input
+                    type="text"
+                    id="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ""))}
+                    placeholder="yourusername"
+                    minLength={3}
+                    maxLength={20}
+                    required
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-[#4A90E2] focus:ring-1 focus:ring-[#4A90E2] transition-all"
+                />
+                <p className="mt-2 text-xs text-white/40">
+                  3–20 characters. Letters, numbers, and underscores only.
+                </p>
+              </div>
+
               {/* Platform */}
               <div className="text-left">
                 <label className="block text-sm font-medium text-white/70 mb-3">
@@ -141,7 +171,7 @@ export function Waitlist() {
 
               <button
                 type="submit"
-                disabled={loading || !email || !platform || !country}
+                disabled={loading || !email || !/^[a-zA-Z0-9_]{3,20}$/.test(username) || !platform || !country}
                 className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-[#4A90E2] via-[#9B59B6] to-[#FF5F6D] text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
@@ -187,7 +217,7 @@ export function Waitlist() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="flex items-center justify-center gap-8 mt-12"
+            className="flex items-center justify-center gap-4 md:gap-8 mt-12"
           >
             <div className="text-center">
               <p className="text-2xl md:text-3xl font-bold gradient-text">653</p>
@@ -200,7 +230,7 @@ export function Waitlist() {
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold gradient-text">Summer 2026</p>
+              <p className="text-2xl md:text-3xl font-bold gradient-text">Q2 2026</p>
               <p className="text-sm text-white/40">Target Launch</p>
             </div>
           </motion.div>

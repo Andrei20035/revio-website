@@ -36,7 +36,7 @@ export function Leaderboard() {
             Climb the <span className="gradient-text">Leaderboard</span>
           </h2>
           <p className="text-white/60 max-w-xl mx-auto text-pretty">
-            Compete with spotters worldwide. Earn points for rare finds, verified spots, and community engagement.
+            Compete with spotters worldwide. Earn points for rare finds, uploads, and community activity.
           </p>
         </motion.div>
 

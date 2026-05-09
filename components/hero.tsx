@@ -5,8 +5,8 @@ import { PhoneMockup, AppScreen } from "./phone-mockup"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
-      {/* Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 px-4">
+          {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#080C30] via-black to-[#080C30]" />
       
       {/* Animated background elements */}
@@ -53,7 +53,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left lg:pl-16"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -131,11 +131,14 @@ export function Hero() {
           </motion.div>
 
           {/* Phone mockup */}
-          <div className="relative flex justify-center lg:justify-end">
-            <PhoneMockup delay={0.4}>
-              <AppScreen />
-            </PhoneMockup>
-          </div>
+            <div className="relative flex justify-center lg:justify-end lg:translate-y-6">
+                <PhoneMockup
+                    delay={0.4}
+                    className="lg:-translate-x-8 xl:-translate-x-8 2xl:-translate-x-8 lg:scale-90 xl:scale-[0.92]"
+                >
+                    <AppScreen />
+                </PhoneMockup>
+            </div>
         </div>
       </div>
 

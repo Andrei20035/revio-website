@@ -11,25 +11,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Revio | Car Spotting App for Automotive Enthusiasts',
-  description: 'Join the waitlist for Revio, a social car spotting app where automotive enthusiasts share rare car sightings, compete on leaderboards, and connect with other car lovers.',
-  generator: 'v0.app',
-  keywords: ['car spotting', 'automotive', 'social app', 'car enthusiasts', 'luxury cars', 'supercars'],
+  description:
+      'Join the waitlist for Revio, a social car spotting app where automotive enthusiasts share rare car sightings, compete on leaderboards, and connect with other car lovers.',
+  keywords: [
+    'car spotting',
+    'automotive',
+    'social app',
+    'car enthusiasts',
+    'luxury cars',
+    'supercars',
+  ],
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/logo_square.png',
+    apple: '/logo_square.png',
   },
 }
 

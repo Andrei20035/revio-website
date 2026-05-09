@@ -17,7 +17,7 @@ export function PhoneMockup({ children, className = "", delay = 0 }: PhoneMockup
       className={`relative ${className}`}
     >
       {/* Phone frame */}
-        <div className="relative mx-auto w-[340px] h-[720px] origin-center scale-[0.82] sm:scale-[0.9] md:scale-100 rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 p-[6px] shadow-2xl">
+        <div className="relative mx-auto w-[340px] h-[720px] origin-center scale-[0.78] sm:scale-[0.85] md:scale-[0.92] lg:scale-[0.88] xl:scale-[0.92] rounded-[3rem] bg-gradient-to-b from-zinc-800 to-zinc-900 p-[6px] shadow-2xl">
             {/* Inner bezel */}
         <div className="absolute inset-[6px] rounded-[2.5rem] bg-gradient-to-b from-zinc-700 to-zinc-800 p-1">
           {/* Screen */}
