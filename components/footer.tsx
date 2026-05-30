@@ -15,7 +15,7 @@ const footerLinks = {
   ],
   social: [
     { name: "Instagram", href: "#", icon: "instagram" },
-    { name: "TikTok", href: "#", icon: "tiktok" },
+    { name: "TikTok", href: "https://www.tiktok.com/@therevioapp", icon: "tiktok" },
   ],
 }
 
@@ -64,10 +64,12 @@ export function Footer() {
             <div className="flex gap-3">
               {footerLinks.social.map((link) => (
                 <a
-                  key={link.name}
-                  href={link.href}
-                  aria-label={link.name}
-                  className="w-10 h-10 rounded-full glass flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.name}
+                    className="w-10 h-10 rounded-full glass flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
                 >
                   <SocialIcon type={link.icon} />
                 </a>
