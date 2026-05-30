@@ -74,7 +74,7 @@ export function AppScreen() {
             <div className="pointer-events-none absolute top-0 left-0 right-0 z-20 h-24 bg-gradient-to-b from-black/70 to-transparent" />
 
             <motion.img
-                src="/feed-preview.png"
+                src="/feed-preview.webp"
                 alt="Revio feed preview"
                 className="absolute left-0 top-12 w-full"
                 animate={{ y: ["0%", "-45%"] }}

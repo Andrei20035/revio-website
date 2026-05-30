@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     'supercars',
   ],
   icons: {
-    icon: '/logo_square.png',
-    apple: '/logo_square.png',
+    icon: '/logo_square.webp',
+    apple: '/logo_square.webp',
   },
 }
 
