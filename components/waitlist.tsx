@@ -277,17 +277,17 @@ export function Waitlist() {
             className="flex items-center justify-center gap-4 md:gap-8 mt-12"
           >
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold gradient-text">653</p>
+              <p className="text-2xl md:text-3xl font-bold text-white">653</p>
               <p className="text-sm text-white/40">Spots Claimed</p>
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold gradient-text">347</p>
+              <p className="text-2xl md:text-3xl font-bold text-white">347</p>
               <p className="text-sm text-white/40">Remaining</p>
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold gradient-text">Q2 2026</p>
+              <p className="text-2xl md:text-3xl font-bold text-white">Q2 2026</p>
               <p className="text-sm text-white/40">Target Launch</p>
             </div>
           </motion.div>
