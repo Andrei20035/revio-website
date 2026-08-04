@@ -287,7 +287,7 @@ export function Waitlist() {
             </div>
             <div className="w-px h-12 bg-white/10" />
             <div className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-white">Q2 2026</p>
+              <p className="text-2xl md:text-3xl font-bold text-white">Q3 2026</p>
               <p className="text-sm text-white/40">Target Launch</p>
             </div>
           </motion.div>
