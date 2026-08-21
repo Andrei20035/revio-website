@@ -13,6 +13,10 @@ const footerLinks = {
     { name: "Terms", href: "/terms" },
     { name: "Cookies", href: "/cookies" },
   ],
+  app: [
+    { name: "App Privacy Policy", href: "/app-privacy" },
+    { name: "Account Deletion", href: "/delete-account" },
+  ],
   social: [
     { name: "Instagram", href: "#", icon: "instagram" },
     { name: "TikTok", href: "https://www.tiktok.com/@therevioapp", icon: "tiktok" },
@@ -47,7 +51,7 @@ export function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-[1fr_auto_auto] gap-8 md:gap-24 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-[1fr_auto_auto_auto] gap-8 md:gap-16 mb-12">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -114,6 +118,23 @@ export function Footer() {
             </ul>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h4 className="text-sm font-semibold text-white mb-4">App</h4>
+            <ul className="space-y-3">
+              {footerLinks.app.map((link) => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-sm text-white/50 hover:text-white transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
         </div>
 
