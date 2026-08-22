@@ -12,6 +12,7 @@ const footerLinks = {
     { name: "Privacy", href: "/privacy" },
     { name: "Terms", href: "/terms" },
     { name: "Cookies", href: "/cookies" },
+    { name: "Child Safety", href: "/child-safety" },
   ],
   app: [
     { name: "App Privacy Policy", href: "/app-privacy" },
